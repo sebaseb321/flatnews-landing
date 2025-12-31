@@ -1,7 +1,40 @@
 <html lang="en"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flatnews</title>
+    
+    <!-- Primary Meta Tags -->
+    <title>Flatnews - Focus on the news. Ignore the noise.</title>
+    <meta name="title" content="Flatnews - Focus on the news. Ignore the noise.">
+    <meta name="description" content="The minimalist news engine for professionals. No ads, no paywalls, no clutter. Get AI-powered summaries and deep-dive insights in a text-only interface designed for clarity.">
+    <meta name="keywords" content="news, minimalist news, AI news, news aggregator, text-only news, professional news, news without ads, AI summaries, news chat">
+    <meta name="author" content="Flatnews">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="English">
+    <meta name="theme-color" content="#000000">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://flatnews.com/">
+    <meta property="og:title" content="Flatnews - Focus on the news. Ignore the noise.">
+    <meta property="og:description" content="The minimalist news engine for professionals. No ads, no paywalls, no clutter. Get AI-powered summaries and deep-dive insights in a text-only interface designed for clarity.">
+    <meta property="og:image" content="https://flatnews.com/og-image.jpg">
+    <meta property="og:site_name" content="Flatnews">
+    <meta property="og:locale" content="en_US">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://flatnews.com/">
+    <meta name="twitter:title" content="Flatnews - Focus on the news. Ignore the noise.">
+    <meta name="twitter:description" content="The minimalist news engine for professionals. No ads, no paywalls, no clutter. Get AI-powered summaries and deep-dive insights in a text-only interface designed for clarity.">
+    <meta name="twitter:image" content="https://flatnews.com/twitter-image.jpg">
+    <meta name="twitter:creator" content="@flatnews">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://flatnews.com/">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -86,15 +119,10 @@
                 <span class="text-sm font-semibold tracking-tight text-black">Flatnews</span>
             </div>
 
-            <div class="hidden md:flex items-center gap-6 text-xs font-medium text-neutral-500 animate-slide delay-100">
-                <a href="#" class="hover:text-black transition-colors">Product</a>
-                <a href="#" class="hover:text-black transition-colors">Download</a>
-                <a href="#" class="hover:text-black transition-colors">Solutions</a>
-                <a href="#" class="hover:text-black transition-colors">Pricing</a>
-            </div>
+            
 
             <div class="flex items-center gap-3 animate-slide delay-100">
-                <a href="#" class="text-xs font-medium text-neutral-500 hover:text-black transition-colors hidden sm:block">Log in</a>
+                <a href="https://app.flatnews.site" class="text-xs font-medium text-neutral-500 hover:text-black transition-colors hidden sm:block">Log in</a>
                 <a href="https://docs.google.com/forms/d/e/1FAIpQLSe15oS0uBg7ht9ilyZfKa_a4Euov4jqecpI3IhzKx8TV-_67g/viewform?usp=dialog" target="_blank" rel="noopener noreferrer" class="bg-black text-white text-xs font-medium px-3 py-1.5 rounded hover:bg-neutral-800 transition-colors shadow-sm">
                     Join the waitlist
                 </a>
@@ -127,10 +155,15 @@
                     </a>
                 </div>
             </div>
-
-            <div class="mt-16 w-full max-w-4xl relative animate-slide delay-400">
-                <div class="absolute -top-10 -left-10 w-64 h-64 bg-gray-200/50 rounded-full blur-3xl opacity-50 mix-blend-multiply"></div>
-                <div class="absolute -bottom-10 -right-10 w-64 h-64 bg-gray-200/50 rounded-full blur-3xl opacity-50 mix-blend-multiply"></div>
+            <div class="mt-12 w-full max-w-4xl animate-slide delay-400">
+                <img 
+                    src="https://seb.nuvt.io/R5miE_y-Uzaq" 
+                    alt="Flatnews interface preview" 
+                    class="w-full h-auto"
+                    loading="lazy"
+                />
+            </div>
+            
 
                
                 
@@ -234,27 +267,17 @@
                     <p class="text-sm text-neutral-500 max-w-lg">A quick overview of the most powerful features in less than 2 minutes.</p>
                 </div>
                 
-                <div class="relative max-w-4xl mx-auto rounded-xl overflow-hidden shadow-2xl bg-neutral-900 aspect-video group cursor-pointer border border-neutral-800">
-                    <!-- Fake Video UI -->
-                    <div class="absolute inset-0 flex items-center justify-center">
-                        <div class="w-16 h-16 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                            <span class="iconify text-white ml-1" data-icon="lucide:play" data-width="24" data-stroke-width="2"></span>
-                        </div>
-                    </div>
-                    
-                    <!-- Decorative Video Elements -->
-                    <div class="absolute bottom-6 left-6 right-6 flex items-center gap-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <div class="h-1 bg-white/20 flex-1 rounded-full overflow-hidden">
-                            <div class="h-full w-1/3 bg-white rounded-full"></div>
-                        </div>
-                        <span class="text-[10px] text-white font-medium">0:34 / 1:52</span>
-                    </div>
-
-                    <!-- Placeholder Image/Gradient -->
-                    <div class="absolute inset-0 -z-10 bg-gradient-to-br from-neutral-800 to-black opacity-90"></div>
-                    <div class="absolute inset-0 -z-20 opacity-30 flex items-center justify-center text-neutral-700">
-                        <span class="iconify w-32 h-32" data-icon="lucide:layout-template"></span>
-                    </div>
+                <div class="relative max-w-4xl mx-auto rounded-xl overflow-hidden shadow-2xl bg-neutral-900 aspect-video border border-neutral-800">
+                    <video 
+                        class="w-full h-full object-cover"
+                        controls
+                        preload="metadata"
+                        poster=""
+                        playsinline
+                    >
+                        <source src="https://seb.nuvt.io/ha-bBsfGHFXx" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
                 </div>
             </div>
         </section>
@@ -309,11 +332,9 @@
                     Flatnews is currently in private beta. We are scaling slowly to maintain the speed and quality of our AI-generated
                     insights. Join the waitlist today to secure your spot in the next rollout.
                 </p>
-                <div class="flex flex-col sm:flex-row gap-3 w-full justify-center">
-                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSe15oS0uBg7ht9ilyZfKa_a4Euov4jqecpI3IhzKx8TV-_67g/viewform?usp=dialog" target="_blank" rel="noopener noreferrer" class="h-10 px-6 bg-white text-black text-sm font-medium rounded hover:bg-neutral-200 transition-colors">
-                        Join the waitlist
-                    </a>
-                    
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSe15oS0uBg7ht9ilyZfKa_a4Euov4jqecpI3IhzKx8TV-_67g/viewform?usp=dialog" target="_blank" rel="noopener noreferrer" class="bg-white text-black text-xs font-medium px-3 py-1.5 rounded hover:bg-neutral-300 shadow-sm">
+                    Join the waitlist
+                </a>
                 </div>
             </div>
         </section>
@@ -336,9 +357,8 @@
             <div class="border-t border-gray-100 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
                 <p class="text-[11px] text-neutral-400">© 2026 Flatnews Inc. All rights reserved.</p>
                 <div class="flex gap-4">
-                    <a href="#" class="text-neutral-400 hover:text-black transition-colors"><span class="iconify" data-icon="lucide:twitter" data-width="14"></span></a>
-                    <a href="#" class="text-neutral-400 hover:text-black transition-colors"><span class="iconify" data-icon="lucide:github" data-width="14"></span></a>
-                    <a href="#" class="text-neutral-400 hover:text-black transition-colors"><span class="iconify" data-icon="lucide:linkedin" data-width="14"></span></a>
+                    <a href="https://github.com/sebaseb321" class="text-neutral-400 hover:text-black transition-colors"><span class="iconify" data-icon="lucide:github" data-width="14"></span></a>
+                    <a href="https://www.linkedin.com/in/sebastian-bertolo-070b90193/" class="text-neutral-400 hover:text-black transition-colors"><span class="iconify" data-icon="lucide:linkedin" data-width="14"></span></a>
                 </div>
             </div>
         </div>
