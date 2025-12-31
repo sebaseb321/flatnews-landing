@@ -1,0 +1,346 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flatnews</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        @keyframes slideUpFade {
+            0% { opacity: 0; transform: translateY(24px) scale(0.98); }
+            100% { opacity: 1; transform: translateY(0) scale(1); }
+        }
+
+        .animate-slide {
+            opacity: 0;
+            animation: slideUpFade 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        .delay-100 { animation-delay: 0.1s; }
+        .delay-200 { animation-delay: 0.2s; }
+        .delay-300 { animation-delay: 0.3s; }
+        .delay-400 { animation-delay: 0.4s; }
+
+        .custom-checkbox {
+            appearance: none;
+            background-color: transparent;
+            margin: 0;
+            font: inherit;
+            color: currentColor;
+            width: 1.15em;
+            height: 1.15em;
+            border: 1px solid #d4d4d4;
+            border-radius: 0.25em;
+            display: grid;
+            place-content: center;
+            transition: all 0.2s ease-in-out;
+            cursor: pointer;
+        }
+
+        .custom-checkbox::before {
+            content: "";
+            width: 0.65em;
+            height: 0.65em;
+            transform: scale(0);
+            transition: 0.1s transform ease-in-out;
+            box-shadow: inset 1em 1em black;
+            transform-origin: center;
+            clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+        }
+
+        .custom-checkbox:checked::before { transform: scale(1); }
+        .custom-checkbox:checked { border-color: black; }
+
+        /* Hide default details marker */
+        details > summary { list-style: none; }
+        details > summary::-webkit-details-marker { display: none; }
+        
+        /* Smooth detail open */
+        details[open] summary ~ * {
+            animation: sweep .3s ease-in-out;
+        }
+        @keyframes sweep {
+            0%    {opacity: 0; transform: translateY(-10px)}
+            100%  {opacity: 1; transform: translateY(0)}
+        }
+
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #e5e5e5; border-radius: 3px; }
+    </style>
+</head>
+<body class="bg-neutral-100 text-neutral-900 overflow-x-hidden selection:bg-neutral-200 selection:text-black">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 w-full z-50 border-b border-gray-200 bg-neutral-100/80 backdrop-blur-md">
+        <div class="max-w-screen-xl mx-auto px-6 h-14 flex items-center justify-between">
+            <div class="flex items-center gap-2 animate-slide">
+                <span class="text-sm font-semibold tracking-tight text-black">Flatnews</span>
+            </div>
+
+            <div class="hidden md:flex items-center gap-6 text-xs font-medium text-neutral-500 animate-slide delay-100">
+                <a href="#" class="hover:text-black transition-colors">Product</a>
+                <a href="#" class="hover:text-black transition-colors">Download</a>
+                <a href="#" class="hover:text-black transition-colors">Solutions</a>
+                <a href="#" class="hover:text-black transition-colors">Pricing</a>
+            </div>
+
+            <div class="flex items-center gap-3 animate-slide delay-100">
+                <a href="#" class="text-xs font-medium text-neutral-500 hover:text-black transition-colors hidden sm:block">Log in</a>
+                <button class="bg-black text-white text-xs font-medium px-3 py-1.5 rounded hover:bg-neutral-800 transition-colors shadow-sm">
+                    Get free access
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="relative pt-32 pb-20 px-6 max-w-screen-xl mx-auto flex flex-col items-center">
+            <div class="max-w-2xl w-full text-center flex flex-col items-center z-10">
+                <div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full border border-gray-200 bg-white/50 mb-6 animate-slide">
+                    <span class="iconify text-neutral-500" data-icon="lucide:sparkles" data-width="12"></span>
+                    <span class="text-[11px] font-medium text-neutral-600 tracking-tight">New features available</span>
+                </div>
+
+                <h1 class="text-4xl md:text-5xl font-normal tracking-tight text-black leading-[1.1] mb-5 animate-slide delay-100">
+                    Focus on the news.<br>
+                    <span class="text-neutral-400">Ignore the noise.</span>
+                </h1>
+
+                <p class="text-base text-neutral-500 max-w-md leading-relaxed mb-8 font-light animate-slide delay-200">
+                    The minimalist news engine for professionals. No ads, no paywalls, no clutter. Get AI-powered summaries and deep-dive insights in a text-only interface designed for clarity.
+                </p>
+
+                <div class="flex flex-col sm:flex-row items-center gap-3 w-full justify-center animate-slide delay-300">
+                    <button class="h-10 px-5 bg-black text-white text-sm font-medium rounded hover:bg-neutral-800 transition-all shadow-sm flex items-center gap-2 group">
+                        Join the Waitlist
+                        <span class="iconify group-hover:translate-x-0.5 transition-transform" data-icon="lucide:arrow-right" data-width="14" data-stroke-width="1.5"></span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="mt-16 w-full max-w-4xl relative animate-slide delay-400">
+                <div class="absolute -top-10 -left-10 w-64 h-64 bg-gray-200/50 rounded-full blur-3xl opacity-50 mix-blend-multiply"></div>
+                <div class="absolute -bottom-10 -right-10 w-64 h-64 bg-gray-200/50 rounded-full blur-3xl opacity-50 mix-blend-multiply"></div>
+
+               
+                
+            
+        </div></section>
+
+        <!-- Problem Section -->
+        <section class="max-w-screen-xl mx-auto px-6 py-24 border-t border-neutral-200">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-2xl font-semibold tracking-tight text-black mb-3">News shouldn't feel like an obstacle course.</h2>
+                    <p class="text-sm text-neutral-500">The current state of information is broken:</p>
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-x-12 gap-y-10">
+                    <div class="flex flex-col items-start">
+                        <span class="iconify text-neutral-400 mb-3" data-icon="lucide:lock" data-width="20" data-stroke-width="1.5"></span>
+                        <h3 class="text-sm font-semibold text-black mb-1">The Paywall Trap</h3>
+                        <p class="text-xs text-neutral-500 leading-relaxed">You want to learn, they want your credit card.</p>
+                    </div>
+                    
+                    <div class="flex flex-col items-start">
+                        <span class="iconify text-neutral-400 mb-3" data-icon="lucide:monitor-off" data-width="20" data-stroke-width="1.5"></span>
+                        <h3 class="text-sm font-semibold text-black mb-1">Visual Pollution</h3>
+                        <p class="text-xs text-neutral-500 leading-relaxed">Autoplay videos and banners fighting for your attention.</p>
+                    </div>
+
+                    <div class="flex flex-col items-start">
+                        <span class="iconify text-neutral-400 mb-3" data-icon="lucide:scroll" data-width="20" data-stroke-width="1.5"></span>
+                        <h3 class="text-sm font-semibold text-black mb-1">Context Vacuum</h3>
+                        <p class="text-xs text-neutral-500 leading-relaxed">Infinite scrolling that leaves you more confused than before.</p>
+                    </div>
+
+                    <div class="flex flex-col items-start">
+                        <span class="iconify text-neutral-400 mb-3" data-icon="lucide:mouse-pointer-click" data-width="20" data-stroke-width="1.5"></span>
+                        <h3 class="text-sm font-semibold text-black mb-1">The Clickbait Tax</h3>
+                        <p class="text-xs text-neutral-500 leading-relaxed">2,000 words for a story that could be explained in three.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="max-w-screen-xl mx-auto px-6 py-24 border-t border-neutral-200">
+            <div class="text-center mb-16">
+                <h2 class="text-2xl font-semibold tracking-tight text-black mb-3">High-signal information. Zero distraction.</h2>
+            </div>
+            
+            <div class="grid md:grid-cols-4 gap-6">
+                <!-- Feature 1 -->
+                <div class="p-6 bg-white rounded-lg border border-neutral-200 shadow-sm hover:shadow-md transition-shadow group">
+                    <div class="w-8 h-8 rounded bg-neutral-100 flex items-center justify-center mb-4 group-hover:bg-neutral-900 group-hover:text-white transition-colors">
+                        <span class="iconify" data-icon="lucide:zap" data-width="16" data-stroke-width="1.5"></span>
+                    </div>
+                    <h3 class="text-sm font-semibold text-black mb-2">12 Key Stories</h3>
+                    <p class="text-xs text-neutral-500 leading-relaxed">
+                        We don’t believe in infinite scrolls. You get up to 12 curated news stories per category. Focus on what matters.
+                    </p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="p-6 bg-white rounded-lg border border-neutral-200 shadow-sm hover:shadow-md transition-shadow group">
+                    <div class="w-8 h-8 rounded bg-neutral-100 flex items-center justify-center mb-4 group-hover:bg-neutral-900 group-hover:text-white transition-colors">
+                        <span class="iconify" data-icon="lucide:layers" data-width="16" data-stroke-width="1.5"></span>
+                    </div>
+                    <h3 class="text-sm font-semibold text-black mb-2">AI Synthesis in One Click</h3>
+                    <p class="text-xs text-neutral-500 leading-relaxed">
+                        Don’t read the whole thing. Our AI distills the most complex stories into actionable bullet points instantly.
+                    </p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="p-6 bg-white rounded-lg border border-neutral-200 shadow-sm hover:shadow-md transition-shadow group">
+                    <div class="w-8 h-8 rounded bg-neutral-100 flex items-center justify-center mb-4 group-hover:bg-neutral-900 group-hover:text-white transition-colors">
+                        <span class="iconify" data-icon="lucide:puzzle" data-width="16" data-stroke-width="1.5"></span>
+                    </div>
+                    <h3 class="text-sm font-semibold text-black mb-2">Chat with the News</h3>
+                    <p class="text-xs text-neutral-500 leading-relaxed">
+                        Need more context? Ask our AI about the background, the "why," or the impact of any story. It’s like having a researcher
+                        by your side.
+                    </p>
+                </div>
+                <!-- Feature 4 -->
+                <div class="p-6 bg-white rounded-lg border border-neutral-200 shadow-sm hover:shadow-md transition-shadow group">
+                    <div class="w-8 h-8 rounded bg-neutral-100 flex items-center justify-center mb-4 group-hover:bg-neutral-900 group-hover:text-white transition-colors">
+                        <span class="iconify" data-icon="lucide:puzzle" data-width="16" data-stroke-width="1.5"></span>
+                    </div>
+                    <h3 class="text-sm font-semibold text-black mb-2">Clean by Design</h3>
+                    <p class="text-xs text-neutral-500 leading-relaxed">
+                        No cookies. No trackers. No images. Just the facts in high-performance text format.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Video Demo Section -->
+        <section class="border-y border-neutral-200 bg-white py-24">
+            <div class="max-w-screen-xl mx-auto px-6">
+                <div class="flex flex-col items-center text-center mb-12">
+                    <h2 class="text-2xl font-semibold tracking-tight text-black mb-3">See how it works</h2>
+                    <p class="text-sm text-neutral-500 max-w-lg">A quick overview of the most powerful features in less than 2 minutes.</p>
+                </div>
+                
+                <div class="relative max-w-4xl mx-auto rounded-xl overflow-hidden shadow-2xl bg-neutral-900 aspect-video group cursor-pointer border border-neutral-800">
+                    <!-- Fake Video UI -->
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <div class="w-16 h-16 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                            <span class="iconify text-white ml-1" data-icon="lucide:play" data-width="24" data-stroke-width="2"></span>
+                        </div>
+                    </div>
+                    
+                    <!-- Decorative Video Elements -->
+                    <div class="absolute bottom-6 left-6 right-6 flex items-center gap-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div class="h-1 bg-white/20 flex-1 rounded-full overflow-hidden">
+                            <div class="h-full w-1/3 bg-white rounded-full"></div>
+                        </div>
+                        <span class="text-[10px] text-white font-medium">0:34 / 1:52</span>
+                    </div>
+
+                    <!-- Placeholder Image/Gradient -->
+                    <div class="absolute inset-0 -z-10 bg-gradient-to-br from-neutral-800 to-black opacity-90"></div>
+                    <div class="absolute inset-0 -z-20 opacity-30 flex items-center justify-center text-neutral-700">
+                        <span class="iconify w-32 h-32" data-icon="lucide:layout-template"></span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="max-w-2xl mx-auto px-6 py-24">
+            <h2 class="text-2xl font-semibold tracking-tight text-black mb-10 text-center">FAQs</h2>
+            
+            <div class="space-y-1">
+                <details class="group py-4 border-b border-neutral-200 cursor-pointer">
+                    <summary class="flex items-center justify-between font-medium text-sm text-neutral-800 hover:text-black transition-colors">
+                        <span>Why text-only?</span>
+                        <span class="iconify transform group-open:rotate-180 transition-transform text-neutral-400" data-icon="lucide:chevron-down" data-width="16"></span>
+                    </summary>
+                    <p class="mt-3 text-xs text-neutral-500 leading-relaxed pr-8">
+                        Because images in news are often used to manipulate emotions or slow down your browsing. Text-only is 10x faster and
+                        100% focused.
+                    </p>
+                </details>
+
+                <details class="group py-4 border-b border-neutral-200 cursor-pointer">
+                    <summary class="flex items-center justify-between font-medium text-sm text-neutral-800 hover:text-black transition-colors">
+                        <span>How does the AI chat work?</span>
+                        <span class="iconify transform group-open:rotate-180 transition-transform text-neutral-400" data-icon="lucide:chevron-down" data-width="16"></span>
+                    </summary>
+                    <p class="mt-3 text-xs text-neutral-500 leading-relaxed pr-8">
+                        It analyzes the specific article you are reading and uses its knowledge base to answer questions, explain jargon, or
+                        provide historical context.
+                    </p>
+                </details>
+
+                <details class="group py-4 border-b border-neutral-200 cursor-pointer">
+                    <summary class="flex items-center justify-between font-medium text-sm text-neutral-800 hover:text-black transition-colors">
+                        <span>Is it free?</span>
+                        <span class="iconify transform group-open:rotate-180 transition-transform text-neutral-400" data-icon="lucide:chevron-down" data-width="16"></span>
+                    </summary>
+                    <p class="mt-3 text-xs text-neutral-500 leading-relaxed pr-8">
+                        Early adopters from the waitlist will get a special "Founder" status with exclusive perks as we evolve.
+                    </p>
+                </details>
+
+                
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="bg-black text-white py-24 px-6 text-center">
+            <div class="max-w-xl mx-auto flex flex-col items-center">
+              
+                <h2 class="text-3xl font-semibold tracking-tight mb-4">Reclaiming your attention, one invite at a time.</h2>
+                <p class="text-neutral-400 text-sm mb-8 leading-relaxed">
+                    Flatnews is currently in private beta. We are scaling slowly to maintain the speed and quality of our AI-generated
+                    insights. Join the waitlist today to secure your spot in the next rollout.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-3 w-full justify-center">
+                    <button class="h-10 px-6 bg-white text-black text-sm font-medium rounded hover:bg-neutral-200 transition-colors">
+                        Create free account
+                    </button>
+                    
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-gray-200 pt-16 pb-12 px-6">
+        <div class="max-w-screen-xl mx-auto">
+            <div class="grid grid-cols-2 md:grid-cols-6 gap-8 mb-12">
+                <div class="col-span-2 md:col-span-2 flex flex-col items-start gap-4">
+                    <div class="flex items-center gap-2">
+                        <span class="text-sm font-semibold tracking-tight text-black">Flatnews</span>
+                    </div>
+                    <p class="text-xs text-neutral-500 max-w-xs leading-relaxed">
+                        A better way to work. Bringing your documents, tasks, and wikis into a single connected workspace.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-100 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-[11px] text-neutral-400">© 2026 Flatnews Inc. All rights reserved.</p>
+                <div class="flex gap-4">
+                    <a href="#" class="text-neutral-400 hover:text-black transition-colors"><span class="iconify" data-icon="lucide:twitter" data-width="14"></span></a>
+                    <a href="#" class="text-neutral-400 hover:text-black transition-colors"><span class="iconify" data-icon="lucide:github" data-width="14"></span></a>
+                    <a href="#" class="text-neutral-400 hover:text-black transition-colors"><span class="iconify" data-icon="lucide:linkedin" data-width="14"></span></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body></html>
